@@ -1,0 +1,64 @@
+{
+    "name": "itpekov/telegram-message",
+    "description": "Send message to Telegram channel via bot",
+    "keywords": [
+        "telegram",
+        "telegram bot",
+        "telegram bot api",
+        "telegram message",
+        "telegram php",
+        "laravel telegram"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Aleksandr Itpekov",
+            "email": "itpekov.support@icloud.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0",
+        "laravel/pint": "^1.15",
+        "orchestra/testbench": "^9.0.0||^8.22.0",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itpekov\\TelegramMessage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Itpekov\\TelegramMessage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itpekov\\TelegramMessage\\TelegramMessageServiceProvider"
+            ],
+            "aliases": {
+                "Telegram": "Itpekov\\TelegramMessage\\Facades\\Telegram"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

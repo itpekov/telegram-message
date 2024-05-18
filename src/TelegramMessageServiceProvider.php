@@ -31,7 +31,7 @@ class TelegramMessageServiceProvider extends ServiceProvider
 
             // Publish views
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/telegram-message'),
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/telegram-message'),
             ], 'views');
         }
 

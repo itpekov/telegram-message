@@ -2,7 +2,6 @@
 
 namespace Itpekov\TelegramMessage\Tests;
 
-
 use Itpekov\TelegramMessage\TelegramMessageServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase

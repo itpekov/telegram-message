@@ -2,7 +2,6 @@
 
 namespace Itpekov\TelegramMessage;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class TelegramMessageServiceProvider extends ServiceProvider
@@ -11,7 +10,6 @@ class TelegramMessageServiceProvider extends ServiceProvider
     {
         $this->app->bind(TelegramMessage::class, function ($app) {
             return new TelegramMessage(
-                http: $app->make(Http::class),
                 botToken: config('telegram.bot_token'),
                 chatId: config('telegram.chat_id'),
             );
@@ -31,7 +29,7 @@ class TelegramMessageServiceProvider extends ServiceProvider
 
             // Publish views
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/telegram-message'),
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/telegram-message'),
             ], 'views');
         }
 

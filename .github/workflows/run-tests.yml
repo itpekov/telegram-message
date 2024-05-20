@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [8.3, 8.2]
+        php: [8.3]
         laravel: [10.*]
         stability: [prefer-stable]
         include:
@@ -25,7 +25,7 @@ jobs:
             carbon: ^2.63
             guzzle: ^7.8
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ubuntu-latest
 
     steps:
       - name: Checkout code

@@ -51,5 +51,8 @@ jobs:
       - name: List Installed Dependencies
         run: composer show -D
 
+      - name: Execute ls
+        run: ls -la
+
       - name: Execute tests
-        run: ./vendor/bin/phpunit -c phpunit.xml
+        run: vendor/bin/phpunit --configuration phpunit.xml

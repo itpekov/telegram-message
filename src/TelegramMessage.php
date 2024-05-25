@@ -13,7 +13,6 @@ class TelegramMessage
     protected const API_URL = 'https://api.telegram.org/bot';
 
     public function __construct(
-        private readonly Http $http,
         private readonly ?string $botToken = null,
         private readonly ?string $chatId = null
     ) {
@@ -53,7 +52,7 @@ class TelegramMessage
 
     private function postRequest(array $data): Response
     {
-        $response = $this->http::post(
+        $response = Http::post(
             self::API_URL . $this->botToken . '/sendMessage',
             $data
         );

@@ -1,5 +1,8 @@
 # Telegram message
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/itpekov/telegram-message.svg?style=flat-square)](https://packagist.org/packages/itpekov/telegram-message)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/itpekov/telegram-message/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/itpekov/telegram-message/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/itpekov/telegram-message/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/itpekov/telegram-message/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 ## Installation
 
 You can install the package via composer:
@@ -32,6 +35,8 @@ Scenario 3: send all unhandled exceptions from your app
 by adding/updating `report` method in `Handler.php` class
 
 ```php
+use Itpekov\TelegramMessage\Facades\Telegram;
+
 public function report(Throwable $e)
 {
     $e = $this->mapException($e);

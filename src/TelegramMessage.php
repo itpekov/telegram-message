@@ -13,8 +13,8 @@ class TelegramMessage
     protected const API_URL = 'https://api.telegram.org/bot';
 
     public function __construct(
-        private readonly ?string $botToken = null,
-        private readonly ?string $chatId = null
+        private readonly string $botToken,
+        private readonly string $chatId
     ) {
         if (empty($this->botToken)) {
             throw new \InvalidArgumentException('Telegram bot token is required.');

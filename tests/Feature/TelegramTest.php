@@ -45,7 +45,7 @@ class TelegramTest extends TestCase
     {
         // Arrange
         Http::fake([
-            'https://api.telegram.org/bot*' => Http::response(['test-key' => 'test-value1'], 200),
+            'https://api.telegram.org/bot*' => Http::response(['test-key' => 'test-value'], 200),
         ]);
 
         Config::set('telegram.bot_token', 'test_token');

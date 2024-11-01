@@ -72,7 +72,7 @@ class TelegramMessage
     private function logFailed(Response $response): void
     {
         Log::warning(
-            __CLASS__ . ' request failed',
+            __CLASS__ . ' request failed ',
             [
                 'reason' => $response->reason(),
                 'status' => $response->status(),

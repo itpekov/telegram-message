@@ -45,7 +45,7 @@ class TelegramTest extends TestCase
     {
         // Arrange
         Http::fake([
-            'https://api.telegram.org/bot*' => Http::response(['test-key' => 'test-value'], 200),
+            'https://api.telegram.org/bot*' => Http::response(['test-key' => 'test-value2'], 200),
         ]);
 
         Config::set('telegram.bot_token', 'test_token');
@@ -56,7 +56,7 @@ class TelegramTest extends TestCase
 
         // Assert
         $this->assertEquals(200, $response->status());
-        self::assertEquals(['test-key' => 'test-value'], $response->json());
+        self::assertEquals(['test-key' => 'test-value2'], $response->json());
     }
 
     /**

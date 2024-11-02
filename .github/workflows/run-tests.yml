@@ -43,18 +43,6 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Get Composer cache dir
-        id: composer-cache-dir
-        run: echo dir=$(composer config cache-files-dir) >> $GITHUB_OUTPUT
-
-      - name: Cache dependencies
-        uses: actions/cache@v4.1.2
-        with:
-          key: composer-cache-${{ runner.os }}-php-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-          path: ${{ steps.composer-cache-dir.outputs.dir }}
-          restore-keys: |
-            composer-cache-${{ runner.os }}-php-${{ matrix.php }}-
-
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
